@@ -132,7 +132,7 @@
     <img class="search-logo" src="Trazado-520.svg" alt="Universidad de La Rioja" />
 
     <div class="search-box">
-      <input type="text" id="search" class="search-input" placeholder="Escribe al menos 3 caracteres para buscar..."
+      <input type="text" id="search" class="search-input" placeholder="Escribe una palabra clave para buscar..."
         autocomplete="off" />
       <div id="suggestions" class="suggestions" style="display:none;"></div>
     </div>
@@ -144,249 +144,124 @@
     // Contenido base: título, resumen y URL
     const contenidos = [
       {
-        "titulo": "Linux kernel",
-        "resumen": "Núcleo del sistema operativo Linux, base de multitud de distribuciones y de Android, desarrollado de forma colaborativa y liberado como software libre desde 1991.[web:10]",
-        "url": "https://kernel.org/"
+        "titulo": "Restablecer la contraseña de la cuenta (CUASI)",
+        "resumen": "Tras introducir DNI, NIE o pasaporte se podrá estableder una nueva contraseña a través de un código enviado la móvil o correo electrónico externo",
+        "url": "https://aps.unirioja.es/gestionaCUASI/cuasi/recuperar"
       },
       {
-        "titulo": "GNU Compiler Collection (GCC)",
-        "resumen": "Conjunto de compiladores para múltiples lenguajes (C, C++, Fortran y otros), pieza central del ecosistema de herramientas de desarrollo de software libre.[web:5]",
-        "url": "https://gcc.gnu.org/"
+        "titulo": "Cambiar la contraseña de la cuenta (CUASI)",
+        "resumen": "Cambio de contraseña de la CUASI, cumpliendo los criterios establecidos de historial y complejidad indicados",
+        "url": "https://aps.unirioja.es/gestionaCUASI/contrasena/modificar"
       },
       {
-        "titulo": "Python",
-        "resumen": "Lenguaje de programación interpretado, de alto nivel y multiparadigma, muy usado en ciencia de datos, web, automatización y scripting.[web:5]",
-        "url": "https://www.python.org/"
+        "titulo": "Actualizar los datos de comunicación (móvil y e-mail externo) asociados a la cuenta (CUASI)",
+        "resumen": "Permite cambiar la dirección de correo electrónico y teléfono móvil que se usan para poder restablecer la contraseña de la cuenta (CUASI)",
+        "url": "https://aps.unirioja.es/gestionaCUASI/datoscomunicacion/actualizar"
       },
       {
-        "titulo": "PostgreSQL",
-        "resumen": "Sistema de gestión de bases de datos relacional objeto, robusto y extensible, ampliamente utilizado en aplicaciones críticas.[web:5]",
-        "url": "https://www.postgresql.org/"
+        "titulo": "Verificación integridad de documentos autenticados mediante el código seguro de verificación (CSV)",
+        "resumen": "Permite la verificación de la veracidad de documentos oficiales de la sede electrónica de la Universidad de La Rioja mediante su código seguro de verificación (CSV)",
+        "url": "https://sede.unirioja.es/csv/public/"
       },
       {
-        "titulo": "MySQL",
-        "resumen": "Sistema de gestión de bases de datos relacional muy popular en aplicaciones web y parte habitual de pilas LAMP.[web:5]",
-        "url": "https://www.mysql.com/"
+        "titulo": "Utilización de la aplicación SPSS 28",
+        "resumen": "La aplicación SPSS versión 28 puede ser utilizada por medio de la plataforma de aplicaciones AppsAnywhere y también necesita la conexión VPN de FortiClient para obtener la licencia que permita su uso.",
+        "url": "https://appsanywhere.unirioja.es/app/2ed63254-43b0-11ed-a1a1-005056bee187"
       },
       {
-        "titulo": "SQLite",
-        "resumen": "Motor de base de datos ligero, autocontenido y embebible, ampliamente usado en aplicaciones móviles y de escritorio.[web:5]",
-        "url": "https://sqlite.org/"
+        "titulo": "Verificación QR DNI móvil (aplicación miDNI)",
+        "resumen": "Aplicación web que permite verificar un QR generado por la aplicación miDNI a través de webcam conectada al equipo y permitida por el navegador",
+        "url": "https://www.midni.gob.es/VerificadorQR"
       },
       {
-        "titulo": "Apache HTTP Server",
-        "resumen": "Servidor web de propósito general, uno de los más usados para servir sitios y aplicaciones en Internet desde finales de los 90.[web:5]",
-        "url": "https://httpd.apache.org/"
+        "titulo": "Solicitud de certificado de persona física de la FNMT como estudiante o personal de la Universidad de La Rioja",
+        "resumen": "La Oficina de Atención a la Comunidad Universitaria  (OACU) es autoridad de registro de la Fábrica Nacional de Moneda y Timbre (FNMT) para la emisión del certificado electrónico de persona física  en la Universidad de La Rioja para los miembros de la comunidad universitaria.",
+        "url": "https://www.unirioja.es/administracion-y-servicios/oficina-de-atencion-a-la-comunidad-universitaria/certificado-de-ciudadano-persona-fisica/"
       },
       {
-        "titulo": "Nginx",
-        "resumen": "Servidor web y proxy inverso de alto rendimiento, orientado a concurrencia masiva y muy usado como balanceador y terminador TLS.[web:5]",
-        "url": "https://nginx.org/"
+        "titulo": "Solicitud de certificado de empleado público de la FNMT como trabajador de la Universidad de La Rioja",
+        "resumen": "El certificado de empleado público es un documento digital que informa del puesto de trabajo o cargo y del departamento o servicio en el que trabaja el/la empleado/a en la Universidad de La Rioja y que le permite realizar comunicaciones firmadas digitalmente en el desempeño de sus competencias.",
+        "url": "https://www.unirioja.es/administracion-y-servicios/oficina-de-atencion-a-la-comunidad-universitaria/certificado-de-empleado-publico/"
       },
       {
-        "titulo": "Kubernetes",
-        "resumen": "Plataforma de orquestación de contenedores que automatiza despliegue, escalado y operación de aplicaciones en contenedores.[web:1]",
-        "url": "https://kubernetes.io/"
+        "titulo": "Emisión del certificado CL@VE permanente para los miembros de la comunidad universitaria.",
+        "resumen": "La Oficina de Atención a la Comunidad Universitaria  (OACU) es la unidad responsable de la emisión del certificado de CL@VE en la Universidad de La Rioja para los miembros de la comunidad universitaria.",
+        "url": "https://www.unirioja.es/administracion-y-servicios/oficina-de-atencion-a-la-comunidad-universitaria/certificado-de-clave/"
       },
       {
-        "titulo": "Docker",
-        "resumen": "Plataforma de contenedores que empaqueta aplicaciones y sus dependencias para ejecutarlas de forma aislada y portable.[web:5]",
-        "url": "https://www.docker.com/"
+        "titulo": "Descarga del paquete Office365 para mi equipo",
+        "resumen": "Descarga del instalador de Office365 para el equipo personal. Uso simultáneo de la aplicación en 5 dispositivos con la licencia de Office365 suministrada",
+        "url": "https://portal.office.com/account/?ref=Harmony#"
       },
       {
-        "titulo": "Git",
-        "resumen": "Sistema de control de versiones distribuido, estándar de facto para el desarrollo colaborativo de software.[web:5]",
-        "url": "https://git-scm.com/"
+        "titulo": "Acceso al correo electrónico Office365 suministrado por la Universidad de La Rioja",
+        "resumen": "Acceso al correo electrónico Office365 suministrado por la Universidad de La Rioja, tanto cuentas de correo como buzones a los que se tenga permitido el acceso.",
+        "url": "https://outlook.office.com/mail/"
       },
       {
-        "titulo": "Visual Studio Code",
-        "resumen": "Editor de código multiplataforma, ligero y extensible mediante extensiones, muy popular entre desarrolladores de múltiples lenguajes.[web:1]",
-        "url": "https://code.visualstudio.com/"
+        "titulo": "Configuración y acceso a la red inalámbrica EDUROAM del campus en dispositivos móviles Android.",
+        "resumen": "Aplicación geteduroam. Configuración de la red inalámbrica EDUROAM del campus en dispositivos Android. Seleccionando la organización e introduciendo el usuario de la CUASI (con @unirioja.es) y la contraseña",
+        "url": "https://play.google.com/store/search?q=eduroam&c=apps"
       },
       {
-        "titulo": "Vim",
-        "resumen": "Editor de texto modal, potente y extensible, utilizado ampliamente en entornos Unix y servidores remotos.[web:5]",
-        "url": "https://www.vim.org/"
+        "titulo": "Configuración y acceso a la red inalámbrica EDUROAM del campus en dispositivos móviles Apple/IOS.",
+        "resumen": "Aplicación geteduroam. Configuración de la red inalámbrica EDUROAM del campus en dispositivos Apple/IOS. Seleccionando la organización e introduciendo el usuario de la CUASI (con @unirioja.es) y la contraseña",
+        "url": "https://apps.apple.com/es/app/geteduroam/id1504076137"
       },
       {
-        "titulo": "Emacs",
-        "resumen": "Editor de texto extensible y personalizable, conocido por su ecosistema de paquetes para programación y escritura.[web:5]",
-        "url": "https://www.gnu.org/software/emacs/"
+        "titulo": "Configuración y acceso a la red inalámbrica EDUROAM del campus en dispositivos Apple MacOS.",
+        "resumen": "configuración de perfil para acceso a red inalámbrica EDUROAM del campus en sistema operativo MacOS de Apple. Introducir el usuario de la CUASI (con @unirioja.es) y la contraseña.",
+        "url": "https://cat.eduroam.org/"
       },
       {
-        "titulo": "React",
-        "resumen": "Biblioteca JavaScript para construir interfaces de usuario basadas en componentes y un modelo declarativo.[web:1]",
-        "url": "https://react.dev/"
+        "titulo": "Configuración y acceso a la red inalámbrica EDUROAM del campus en dispositivos Windows.",
+        "resumen": "configuración del sistema para acceso a red inalámbrica EDUROAM del campus en sistema operativo Windows. Introducir el usuario de la CUASI (con @unirioja.es) y la contraseña.",
+        "url": "https://cat.eduroam.org/"
       },
       {
-        "titulo": "Angular",
-        "resumen": "Framework para construir aplicaciones web de una sola página, mantenido por Google y la comunidad.[web:11]",
-        "url": "https://angular.io/"
+        "titulo": "Recibo el mensaje: ''",
+        "resumen": "El cumplimiento del esquema nacional de seguridad (ENS) por parte de las administraciones públicas implica la desactivación de dispositivos externos de almacenamiento o su uso de manera encriptada para permitir su escritura.",
+        "url": "https://www.ccn-cert.cni.es/gl/800-guia-esquema-nacional-de-seguridad/505-ccn-stic-804-medidas-de-implantancion-del-ens/file.html"
       },
       {
-        "titulo": "Vue.js",
-        "resumen": "Framework progresivo de JavaScript para construir interfaces de usuario, centrado en simplicidad y componentización.[web:11]",
-        "url": "https://vuejs.org/"
+        "titulo": "Acceso a la licencia de Kahoot! de la Universidad de La Rioja",
+        "resumen": "Para obtener la licencia Kahoot! EDU Pro deberá acceder a través del enlace de identificación SSO de RedIRIS, seleccionar la entidad 'Universidad de La Rioja', puede buscar por unirioja o por Rioja. Solo es necesario usar este enlace una vez. ",
+        "url": "https://access-2.kahoot.com/auth/realms/kahoot-enterprise/protocol/openid-connect/auth?client_id=kahoot-rest&response_type=code&kc_idp_hint=rediris"
       },
       {
-        "titulo": "Node.js",
-        "resumen": "Entorno de ejecución de JavaScript del lado servidor basado en el motor V8, diseñado para E/S no bloqueante.[web:5]",
-        "url": "https://nodejs.org/"
+        "titulo": "Uso de Filesender para envio de archivos. Necesito enviar archivos grandes. No se puede usar sistemas como FileTransfer, Mega, etc.",
+        "resumen": "FileSender es un servicio vía web que permite intercambiar ficheros de gran tamaño, que no pueden enviarse como adjuntos al correo electrónico. Está accesible para su uso completo a todos los usuarios (investigadores, personal de las instituciones, y estudiantes) de la Comunidad RedIRIS. El único requerimiento es que la institución esté integrada en el servicio de federación de identidades de RedIRIS, SIR. FileSender permite enviar invitaciones a usuarios externos a la Comunidad RedIRIS, por lo que cualquier persona podrá recibir un archivo. Filesender ofrece un espacio de almacenamiento temporal de 7 días para el personal de las instituciones afiliadas y permite el intercambio de ficheros de hasta 100G. ",
+        "url": "https://filesender.rediris.es/"
       },
       {
-        "titulo": "Django",
-        "resumen": "Framework web de alto nivel para Python que fomenta el desarrollo rápido y el diseño limpio y pragmático.[web:5]",
-        "url": "https://www.djangoproject.com/"
+        "titulo": "Solicitud de certificado S/MIME para firmado digital de correo electrónico",
+        "resumen": "A través de acuerdo de RedIRIS en HARICA cert manager, usando el login de institución, buscando UNIRIOJA o Universidad de La Rioja, se puede solicitar un certificado para firma de correo electrónico de manera gratuita con la dirección de correo de la UR.",
+        "url": "https://cm.harica.gr/"
       },
       {
-        "titulo": "Flask",
-        "resumen": "Microframework web para Python que proporciona una base ligera y extensible para APIs y aplicaciones web.[web:11]",
-        "url": "https://flask.palletsprojects.com/"
+        "titulo": "",
+        "resumen": "",
+        "url": ""
       },
       {
-        "titulo": "Ruby on Rails",
-        "resumen": "Framework web para Ruby basado en convención sobre configuración, muy usado para aplicaciones SaaS.[web:5]",
-        "url": "https://rubyonrails.org/"
+        "titulo": "",
+        "resumen": "",
+        "url": ""
       },
       {
-        "titulo": "TensorFlow",
-        "resumen": "Biblioteca de código abierto para aprendizaje automático y redes neuronales, usada tanto en investigación como en producción.[web:4][web:11]",
-        "url": "https://www.tensorflow.org/"
+        "titulo": "",
+        "resumen": "",
+        "url": ""
       },
       {
-        "titulo": "PyTorch",
-        "resumen": "Framework de deep learning centrado en grafos dinámicos, muy popular en investigación y despliegue de modelos.[web:6]",
-        "url": "https://pytorch.org/"
+        "titulo": "",
+        "resumen": "",
+        "url": ""
       },
       {
-        "titulo": "scikit-learn",
-        "resumen": "Biblioteca de aprendizaje automático en Python que ofrece algoritmos clásicos de clasificación, regresión y clustering.[web:5]",
-        "url": "https://scikit-learn.org/"
-      },
-      {
-        "titulo": "Keras",
-        "resumen": "API de alto nivel para redes neuronales que se ejecuta sobre motores como TensorFlow, simplificando la construcción de modelos.[web:4]",
-        "url": "https://keras.io/"
-      },
-      {
-        "titulo": "OpenCV",
-        "resumen": "Biblioteca de visión por computador ampliamente usada en robótica, análisis de imagen y aplicaciones de IA.[web:3]",
-        "url": "https://opencv.org/"
-      },
-      {
-        "titulo": "Matplotlib",
-        "resumen": "Biblioteca de Python para generar gráficos estáticos, interactivos y animados, estándar en ciencia de datos.[web:8]",
-        "url": "https://matplotlib.org/"
-      },
-      {
-        "titulo": "Pandas",
-        "resumen": "Biblioteca de Python para análisis de datos que ofrece estructuras como DataFrame y herramientas de manipulación tabular.[web:5]",
-        "url": "https://pandas.pydata.org/"
-      },
-      {
-        "titulo": "NumPy",
-        "resumen": "Biblioteca fundamental para computación numérica en Python, basada en arrays multidimensionales y operaciones vectorizadas.[web:5]",
-        "url": "https://numpy.org/"
-      },
-      {
-        "titulo": "Rust",
-        "resumen": "Lenguaje de programación de sistemas centrado en seguridad de memoria y concurrencia sin recolector de basura.[web:5]",
-        "url": "https://www.rust-lang.org/"
-      },
-      {
-        "titulo": "Go",
-        "resumen": "Lenguaje de programación creado en Google, orientado a concurrencia sencilla, compilación rápida y servicios backend.[web:5]",
-        "url": "https://go.dev/"
-      },
-      {
-        "titulo": "TypeScript",
-        "resumen": "Superconjunto tipado de JavaScript que añade tipos estáticos y mejora la mantenibilidad de grandes bases de código.[web:11]",
-        "url": "https://www.typescriptlang.org/"
-      },
-      {
-        "titulo": "Electron",
-        "resumen": "Framework para crear aplicaciones de escritorio usando tecnologías web, basado en Chromium y Node.js.[web:11]",
-        "url": "https://www.electronjs.org/"
-      },
-      {
-        "titulo": "Bootstrap",
-        "resumen": "Framework CSS y JS para diseño responsivo de interfaces web con un amplio conjunto de componentes.[web:11]",
-        "url": "https://getbootstrap.com/"
-      },
-      {
-        "titulo": "jQuery",
-        "resumen": "Biblioteca JavaScript que simplifica el manejo del DOM, eventos y peticiones AJAX en aplicaciones web.[web:5]",
-        "url": "https://jquery.com/"
-      },
-      {
-        "titulo": "WordPress",
-        "resumen": "Sistema de gestión de contenidos (CMS) muy extendido para creación de blogs y sitios web.[web:5]",
-        "url": "https://wordpress.org/"
-      },
-      {
-        "titulo": "Drupal",
-        "resumen": "CMS modular y flexible orientado a sitios complejos y portales institucionales.[web:5]",
-        "url": "https://www.drupal.org/"
-      },
-      {
-        "titulo": "Joomla!",
-        "resumen": "CMS de propósito general para construir sitios y aplicaciones web con extensiones y plantillas.[web:5]",
-        "url": "https://www.joomla.org/"
-      },
-      {
-        "titulo": "LibreOffice",
-        "resumen": "Suite ofimática completa que incluye procesador de textos, hoja de cálculo, presentaciones y más, alternativa libre a suites propietarias.[web:5]",
-        "url": "https://www.libreoffice.org/"
-      },
-      {
-        "titulo": "GIMP",
-        "resumen": "Editor de imágenes y fotos de propósito general, alternativa libre a editores gráficos comerciales.[web:5]",
-        "url": "https://www.gimp.org/"
-      },
-      {
-        "titulo": "Inkscape",
-        "resumen": "Editor de gráficos vectoriales que soporta SVG y se usa para ilustración y diseño.[web:5]",
-        "url": "https://inkscape.org/"
-      },
-      {
-        "titulo": "Blender",
-        "resumen": "Suite de creación 3D para modelado, animación, simulación, renderizado y composición.[web:5]",
-        "url": "https://www.blender.org/"
-      },
-      {
-        "titulo": "Mozilla Firefox",
-        "resumen": "Navegador web libre y multiplataforma centrado en estándares, privacidad y extensibilidad.[web:5]",
-        "url": "https://www.mozilla.org/firefox/"
-      },
-      {
-        "titulo": "Chromium",
-        "resumen": "Proyecto de navegador web abierto en el que se basan Google Chrome y otros navegadores.[web:5]",
-        "url": "https://www.chromium.org/"
-      },
-      {
-        "titulo": "OpenSSL",
-        "resumen": "Biblioteca criptográfica y herramienta de línea de comandos para TLS/SSL y cifrado general.[web:5]",
-        "url": "https://www.openssl.org/"
-      },
-      {
-        "titulo": "OpenSSH",
-        "resumen": "Conjunto de herramientas para acceso remoto seguro y transferencia de archivos basada en el protocolo SSH.[web:5]",
-        "url": "https://www.openssh.com/"
-      },
-      {
-        "titulo": "Ansible",
-        "resumen": "Herramienta de automatización y orquestación de infraestructura basada en YAML y conexión sin agentes.[web:4]",
-        "url": "https://www.ansible.com/"
-      },
-      {
-        "titulo": "Terraform",
-        "resumen": "Herramienta de infraestructura como código para definir y desplegar recursos en múltiples proveedores cloud.[web:4]",
-        "url": "https://www.terraform.io/"
-      },
-      {
-        "titulo": "Prometheus",
-        "resumen": "Sistema de monitorización y alertas basado en series temporales, muy usado en entornos cloud nativos.[web:4]",
-        "url": "https://prometheus.io/"
+        "titulo": "",
+        "resumen": "",
+        "url": ""
       }
     ]
       ;
