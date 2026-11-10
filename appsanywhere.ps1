@@ -36,7 +36,7 @@ if($null -eq (get-package "Cloudpaging Player")){
 }else{
     Start-Process -filepath msiexec.exe -argumentlist "/qn /i $env:TEMP\cloudpaging-player-setup-x64-ARM64.msi REINSTALL=ALL REINSTALLMODE=vamus" -Wait -Verb runas
 }
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Endeavors Technologies\StreamingCore\Settings\AppEvent" /v AllowLocalSystem /t REG_DWORD /d "1" /f
-reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Endeavors Technologies\StreamingCore\Settings\Driver" /v PhysicalLayerMode /t REG_DWORD /d "1" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Numecent\StreamingCore\Settings\AppEvent" /v AllowLocalSystem /t REG_DWORD /d "1" /f
+reg add "HKEY_LOCAL_MACHINE\SOFTWARE\Numecent\StreamingCore\Settings\Driver" /v PhysicalLayerMode /t REG_DWORD /d "1" /f
 Remove-Item $env:temp\cloudpaging-player-setup-x64-ARM64.msi -force -Confirm:$false
 
