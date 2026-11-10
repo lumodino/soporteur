@@ -1,3 +1,5 @@
+$ErrorActionPreference = 'SilentlyContinue'
+
 $appsanywhere = (get-package "Appsanywhere").version
 
 # comprobar versión
