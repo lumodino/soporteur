@@ -1,7 +1,7 @@
 $appsanywhere = (get-package "Appsanywhere").version
 
 # comprobar versión
-if ($appsanywhere -ne "2.7.0" -and $null -ne $appsanywhere) {
+if (($appsanywhere -ne "2.7.0") -and ($null -ne $appsanywhere)) {
     # VERSION INCORRECTA
     Write-warning "Appsanywhere no está actualizado. Finalizando procesos..."
     get-process "AppsAnywhere" | Stop-Process -Force -Confirm:$false
